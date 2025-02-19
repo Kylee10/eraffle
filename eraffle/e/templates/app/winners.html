@@ -1,0 +1,54 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/style.css' %}">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-raffle</title>
+    <link href="{% static 'style/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body class="mw-100 mh-100">
+
+    <div class="header">
+        <p id="tibud">Tibud sa Katibawasan Multi-Purpose Cooperative</p>
+        <p id="title">WINNERS LIST</p>
+    </div>
+    <div class="featureButtons">
+        <form action="{% url 'eraffle:backToHomeOrAttendance' %}" method="post">
+            {% csrf_token %}
+            <input id="checkAttendance" type="submit" value="Check Attendance" name="checkAttendance" class="btn btn-primary btn-lg">
+            <input id="home" type="submit" value="Home" name="home" class="btn btn-primary btn-lg">
+        </form>
+    </div>
+    
+    <div id="mySpinModal" class="spinmodal">
+        <div class="spin-modal-content">
+            <span class="close" onclick="myCloseModal()">&times</span>
+            <h3>Number of Spins</h3>
+            <form action="{% url 'eraffle:setSpins' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="spins" id="spins" required><br>
+                <button class="btn btn-primary" type="submit" value="generate" name="generate">Set</button><br>
+            </form>
+        </div>
+    </div>
+    <div class="maintable">
+        {% for index in winners %}
+            <div class="textDiv">
+                {{ index.name }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="mySaveWinnersModal" class="saveWinnersmodal">
+        <div class="save-modal-content">
+            <span class="close" onclick="myCloseModal2()">&times</span>
+            <h3>Save all Winners before spinning</h3>
+        </div>
+    </div>
+
+    <script src="{% static 'script/js/bootstrap.bundle.min.js' %}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{% static 'script/script.js' %}"></script>
+</body>
+</html>

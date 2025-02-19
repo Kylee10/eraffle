@@ -1,0 +1,35 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/style.css' %}">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-raffle</title>
+    <link href="{% static 'style/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body class="mw-100 mh-100">
+
+    <div class="header">
+        <p id="tibud">Tibud sa Katibawasan Multi-Purpose Cooperative</p>
+        <p id="title">ATTENDANCE LIST</p>
+    </div>
+    <div class="featureButtons">
+        <form action="{% url 'eraffle:backToHomeOrAttendance' %}" method="post">
+            {% csrf_token %}
+            <input id="viewWinners" type="submit" value="View Winners" name="viewWinners" class="btn btn-primary btn-lg">
+            <input id="home" type="submit" value="Home" name="home" class="btn btn-primary btn-lg">
+        </form>
+    </div>
+    <div class="maintable">
+        {% for index in attendance %}
+            <div class="textDiv">
+                {{ index }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <script src="{% static 'script/js/bootstrap.bundle.min.js' %}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{% static 'script/script.js' %}"></script>
+</body>
+</html>

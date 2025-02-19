@@ -1,0 +1,140 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/style.css' %}">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-raffle</title>
+    <link href="{% static 'style/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body class="mw-100 mh-100">
+    <div class="header">
+        <p id="tibud">Tibud sa Katibawasan Multi-Purpose Cooperative</p>
+        <p id="title">ATTENDANCE RAFFLE</p>
+    </div>
+    <div class="featureButtons">
+        <form action="{% url 'eraffle:getWinners' %}" method="post">
+            {% csrf_token %}
+            <input id="checkAttendance" type="submit" value="Check Attendance" name="checkAttendance" class="btn btn-primary btn-lg">
+            <input id="viewWinners" type="submit" value="View Winners" name="viewWinners" class="btn btn-primary btn-lg">
+            <input id="resetList" type="submit" value="Reset List" name="resetList" class="btn btn-primary btn-lg">
+            <input id="saveWinners" type="submit" value="Save Winners" name="saveWinners" class="btn btn-primary btn-lg">
+            <button type="button" onclick="openMyModal()" class="btn btn-primary btn-lg">Set Number of Spins</button>
+            <input id="result1" type="text" name="result1">
+            <input id="result2" type="text" name="result2">
+            <input id="result3" type="text" name="result3">
+            <input id="result4" type="text" name="result4">
+            <input id="result5" type="text" name="result5">
+            <input id="result6" type="text" name="result6">
+        </form>
+    </div>
+    <div class="slot">
+        <div class="upperSlot">
+            <div id ="myContainer1">
+                {% for index in content1 %}
+                    <div class ="container1">
+                        <p id="access_code">{{ index.access_code }}</p>
+                        <p id="name_code">{{ index.name_code }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id ="myContainer2">
+                {% for index in content2 %}
+                    <div class ="container2">
+                        <p id="access_code">{{ index.access_code }}</p>
+                        <p id="name_code">{{ index.name_code }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id ="myContainer3">
+                {% for index in content3 %}
+                    <div class ="container3">
+                        <p id="access_code">{{ index.access_code }}</p>
+                        <p id="name_code">{{ index.name_code }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="lowerSlot">
+            <div id ="myContainer4">
+                {% for index in content4 %}
+                    <div class ="container4">
+                        <p id="access_code">{{ index.access_code }}</p>
+                        <p id="name_code">{{ index.name_code }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id ="myContainer5">
+                {% for index in content5 %}
+                    <div class ="container5">
+                        <p id="access_code">{{ index.access_code }}</p>
+                        <p id="name_code">{{ index.name_code }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id ="myContainer6">
+                {% for index in content6 %}
+                    <div class ="container6">
+                        <p id="access_code">{{ index.access_code }}</p>
+                        <p id="name_code">{{ index.name_code }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="spinButtons">
+        <div class="containerleft">
+            <div class="spintop">
+                <button id="spin1" onclick="spin1()">
+                    SPIN #1
+                </button>
+                <button id="spin2" onclick="spin2()">
+                    SPIN #2
+                </button>
+                <button id="spin3" onclick="spin3()">
+                    SPIN #3
+                </button>
+            </div>
+            <div class="spinbot">
+                <button id="spin4" onclick="spin4()">
+                    SPIN #4
+                </button>
+                <button id="spin5" onclick="spin5()">
+                    SPIN #5
+                </button>
+                <button id="spin6" onclick="spin6()">
+                    SPIN #6
+                </button>
+            </div>
+        </div>
+        <div class="containerright">
+            <button id="spinall" class="btn btn-primary btn-lg" onclick="spinAll()">
+                SPIN ALL
+            </button>
+        </div>
+    </div>
+
+    <div id="mySpinModal" class="spinmodal">
+        <div class="spin-modal-content">
+            <span class="close" onclick="myCloseModal()">&times</span>
+            <h3>Number of Spins</h3>
+            <form action="{% url 'eraffle:setSpins' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="spins" id="spins" required><br>
+                <button class="btn btn-primary" type="submit" value="generate" name="generate">Set</button><br>
+            </form>
+        </div>
+    </div>
+
+    <div id="mySaveWinnersModal" class="saveWinnersmodal">
+        <div class="save-modal-content">
+            <span class="close" onclick="myCloseModal2()">&times</span>
+            <h3>Save all Winners before spinning</h3>
+        </div>
+    </div>
+
+    <script src="{% static 'script/js/bootstrap.bundle.min.js' %}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{% static 'script/script.js' %}"></script>
+</body>
+</html>

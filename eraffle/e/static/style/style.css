@@ -1,0 +1,391 @@
+body{
+    height: 100%;
+    width: 100%;
+    padding: 20px 50px;
+    background-image: url("/static/images/background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.header{
+    margin: 0px 0px;
+    /* background-color: aqua; */
+    font-family: "Madimi One", sans-serif;
+    color: #FFBF00;
+    font-weight: 900;
+    text-align: center;
+}
+
+.featureButtons{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.slot{
+    width: 100%;
+    height: 500px;
+    background-color: #523A28;
+    outline: 1rem solid #FFBF00;
+    outline-offset: -1rem;
+    border-radius: 12px;
+}
+
+.slot #con{
+    display: none;
+}
+
+#access_code{
+    display: none;
+}
+
+#result1,
+#result2,
+#result3,
+#result4,
+#result5,
+#result6{
+    display: none;
+}
+
+.slot .upperSlot{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+.slot .lowerSlot{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+.spinButtons{
+    width: 100%;
+    height: 150px;
+    display: flex;
+}
+
+.spinButtons .containerleft{
+    height: 250px;
+    width: 70%;
+}
+.spinButtons .containerright{
+    height: 250px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinButtons .containerleft .spintop{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    height: 50%;
+
+}
+
+.spinButtons .containerleft .spinbot{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    height: 50%;
+}
+
+.spinButtons .containerleft button{
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 80px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 30px;
+    width: 300px;
+}
+
+.spinButtons .containerleft button:focus{
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.spinButtons .containerleft button:hover{
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.spinButtons .containerleft button:active{
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.spinButtons .containerright #spinall{
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 200px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 50px;
+    width: 300px;
+}
+
+.spinButtons .containerright #spinall:focus{
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.spinButtons .containerright #spinall:hover{
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.spinButtons .containerright #spinall:active{
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+#tibud{
+    font-size: 3rem;
+    text-shadow: black 0 3px 7px;
+}
+#title{
+    font-size: 2rem;
+    text-shadow: black 0 3px 7px;
+}
+
+/* spin designs */
+#myContainer1 {
+    background-color: white;
+    width: 550px;
+    height: 100px;
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden;
+}
+.container1 {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+#myContainer2 {
+    background-color: white;
+    width: 550px;
+    height: 100px;
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden;
+}
+.container2 {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+#myContainer3 {
+    background-color: white;
+    width: 550px;
+    height: 100px;
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden;
+}
+.container3 {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+#myContainer4 {
+    background-color: white;
+    width: 550px;
+    height: 100px;
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden;
+}
+.container4 {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+#myContainer5 {
+    background-color: white;
+    width: 550px;
+    height: 100px;
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden;
+}
+.container5 {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+#myContainer6 {
+    background-color: white;
+    width: 550px;
+    height: 100px;
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden;
+}
+.container6 {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+.saveWinnersmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.save-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.spinmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.spin-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+}
+
+.spin-modal-content .btn{
+    margin-top: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mainTable{
+    width: 100%;
+    height: 650px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    overflow-x: scroll;
+}
+
+.textDiv{
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid black;
+    font-size: small;
+    padding: 5px 5px;
+    font-weight: bold;
+}
