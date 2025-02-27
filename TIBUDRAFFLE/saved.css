@@ -1,0 +1,135 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* back to raffle.html */
+.back {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.back:hover img {
+  transform: scale(1.1);
+}
+
+.button-container {
+  display: flex;
+  justify-content: right;
+  gap: 10px;
+  position: fixed;
+  top: 23%;
+  margin-right: 20%;
+  width: 100%;
+  z-index: 10;
+}
+
+.export {
+  background: #ffd026;
+  font-weight: bolder;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.delete {
+  background: #e24b25;
+  font-weight: bolder;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.export:hover, .delete:hover {
+  transform: scale(1.05);
+}
+
+.winner {
+  position: absolute;
+  top: 10%;
+  font-size: 50px;
+  color: white;
+  text-shadow: black;
+  font-weight: bolder;
+  align-items: center;
+}
+
+.table-container {
+  max-height: 450px;
+  overflow-y: auto;
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 10%;
+}
+
+#winnerTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+}
+
+#winnerTable th, #winnerTable td {  /*names in the table*/
+  padding: 10px;
+  text-align: left;
+  border: 1px solid black;
+  text-align: center;
+}
+
+
+#winnerList {
+  height: 200px;
+  overflow-y: auto; 
+  width: 80%;
+  height: 400px;
+  display: table-row-group;
+}
+
+#winnerTable th {
+  position: sticky;
+  top: 0;
+  background-color: #f4f4f4;
+  z-index: 1;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 10px;
+
+}
+
